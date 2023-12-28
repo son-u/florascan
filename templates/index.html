@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>FloraScan</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body id="top">
+
+    <nav class="navbar navbar-expand-lg" id="navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('index') }}">
+                <!-- <img src="images/logo1.png" class="img-fluid logo-image"> -->
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="img-fluid logo-image">
+
+
+                <div class="d-flex flex-column">
+                    <strong class="logo-text">FloraScan</strong>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-center ms-lg-5">
+                    <li class="nav-item">
+                        <!-- <a class="nav-link active" href="index.html">Homepage</a> -->
+                        <a class="nav-link active" href="{{ url_for('index') }}">Homepage</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section_2">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section d-flex justify-content-center align-items-center">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <div class="hero-section-text mt-5">
+                            <h1 class="hero-title  mt-4 mb-4" id="text-cal">A Web App To Recognize flower</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <form class="custom-form hero-form" action="/predict" method="post"
+                            enctype="multipart/form-data" role="form">
+                            <h4 class="text-black mb-3">Upload your flower below !</h4>
+
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    <input type="file" name="file" accept="image/*" class="form-control"
+                                        placeholder="Choose your Picture" required>
+
+                                    <button type="submit" class="form-control">Predict</button>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="d-flex flex-wrap align-items-center mt-4 mt-lg-0">
+                                        <span class="text-white mb-lg-0 mb-md-0 me-2">Suggestions :</span>
+                                        <div>
+                                            <a href="#" class="badgee">Daisy</a>
+
+                                            <a href="#" class="badgee">Sunflower</a>
+
+                                            <a href="#" class="badgee">Lotus</a>
+
+                                            <a href="#" class="badgee">Orchid</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        {% if prediction %}
+                        <h2>Prediction: {{ prediction }}</h2>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <h2 class="mb-5">About Us</h2>
+
+
+                    <div class="col-lg-5 col-12">
+                        <h2 class="mt-2 mb-4"><span class="text-muted">Introducing</span> <span
+                                id="scan">FloraScan</span></h2>
+
+                        <!-- <h4 class="text-muted mb-3">We FloraScan is an advanced flower recognition system employing</h4> -->
+
+                        <p>FloraScan is an advanced flower recognition system employing state-of-the-art machine
+                            learning and image analysis. Our user-friendly platform swiftly identifies diverse floral
+                            species, providing comprehensive information with just an uploaded image or snapshot.
+                            Passionate about botany and technology, our team aims to simplify flower identification for
+                            enthusiasts and professionals alike, fostering a deeper understanding and appreciation of
+                            nature's beauty.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-7 col-7">
+                        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo"
+                            class="about-image img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-12 d-flex align-items-center">
+                        <p class="copyright-text">Copyright © FloraScan 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        window.onscroll = function () {
+            
+            var navbar = document.getElementById("navbar");
+
+        
+            var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            
+            if (scrollPosition > 50) {
+                navbar.style.position = "fixed";
+                navbar.style.top = "0";
+                navbar.style.width = "100%";
+                navbar.style.zIndex = "1000";
+            } else {
+                navbar.style.position = "static";
+            }
+        };
+    </script>
+
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+
+</html>
