@@ -1,12 +1,13 @@
-===============================================================================
-                      Flower Recognition System using ML
-===============================================================================
+## FLOWER RECOGNITION SYSTEM USING MACHINE LEARNING
 
-Welcome to the Flower Recognition System! This project utilizes machine learning techniques to classify various types of flowers based on images.
+Welcome to the Flower Recognition System! 
+This project utilizes machine learning techniques to classify various types of flowers based on images.
 
-===============================================================================
-                           Project Setup Instructions
-===============================================================================
+## User Interface
+<img width="595" alt="FloraScan" src="https://github.com/son-u/florascan/assets/85066238/9c9588fd-22f5-45dd-b53c-61f76c2c80a2">
+
+
+## Project Setup Instructions
 
 Prerequisites:
 - Python 3.x
@@ -17,66 +18,69 @@ Installation Steps:
 
 1. Clone this repository to your local machine:
 
-    git clone https://github.com/your-username/flower-recognition.git
+    ```bash
+      git clone https://github.com/son-u/florascan.git
+    ```
 
 2. Navigate to the project directory:
 
-    cd flower-recognition
+   ```bash
+     cd flower-recognition
+   ```
 
-3. Set up a virtual environment (recommended):
+4. Set up a virtual environment (recommended):
 
+```bash
     python -m venv .venv
+```
 
-4. Activate the virtual environment:
-   - On Windows:
+5. Activate the virtual environment:
+  ```bash
+      .venv\Scripts\activate
+  ```
 
-    .venv\Scripts\activate
+6. Install the required dependencies:
 
-   - On macOS/Linux:
+ ```bash
+      pip install -r requirements.txt
+  ```
 
-    source .venv/bin/activate
-
-5. Install the required dependencies:
-
-    pip install -r requirements.txt
-
-===============================================================================
-                             Running the Flask App
-===============================================================================
+    
+##  Running the Flask App
 
 Follow these steps to start the Flask server:
 
 1. Start the Jupyter Notebook environment:
 
-    jupyter notebook
-
+   ```bash
+     jupyter notebook
+   ```
+   
 2. Activate the virtual environment (if not already activated):
-
-    .venv\Scripts\activate   # For Windows
-    # or
-    source .venv/bin/activate   # For macOS/Linux
-
+    ```bash
+      .venv\Scripts\activate
+    ```
 3. Run the Flask App:
-
+  ```bash
     python -m flask --app .\app.py run
+  ```
 
-4. Once the server starts successfully, navigate to http://localhost:5000 in your web browser to access the Flower Recognition System.
+4. Once the server starts successfully, navigate to http://localhost:5000 in your web browser
+   to access the Flower Recognition System.
 
-===============================================================================
-                                    Usage
-===============================================================================
+
+### Usage
 
 - Upload an image of a flower to the web application.
 - The system will process the image and provide the predicted species of the flower.
 
-===============================================================================
-                                   Credits
-===============================================================================
+  
 
-This project was developed by SONU SHARMA during the submission of  minor project  MCA 2023.
+ `If you find this repo helpful then don't forget to give a `start ❇️ `to this repository. :)`
 
-===============================================================================
-                                   License
-===============================================================================
+ 
+### Contact me on telegram for any issues :
+`https://t.me/iamserious77`
 
-This project is licensed under the [License Type] License - see the LICENSE file for details.
+### My LinkedIn handel
+`www.linkedin.com/in/sonu-sharma007`
